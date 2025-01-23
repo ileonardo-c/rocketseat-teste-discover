@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mayk Brito</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background-color: #24292E;
+      color: white;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      background-image: url('bg-desktop.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      gap: 20px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .username {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .switch-container {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+      margin-bottom: 30px;
+    }
+
+    .switch {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .switch-label {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      border-radius: 34px;
+      transition: background-color 0.3s ease;
+    }
+
+    .switch-label:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      border-radius: 50%;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .switch:checked + .switch-label {
+      background-color: #2196F3;
+    }
+
+    .switch:checked + .switch-label:before {
+      transform: translateX(26px);
+    }
+
+    .switch-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-120%, -40%);
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .switch:checked + .switch-label .switch-icon {
+      transform: translate(20%, -40%) rotate(360deg);
+    }
+
+    .links {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .button {
+      display: block;
+      padding: 15px 20px;
+      background-color: transparent;
+      color: white;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .social-links {
+      list-style: none;
+      padding: 0;
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .social-links li a {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+    }
+
+    .social-links img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .copyright {
+      font-size: 0.8rem;
+      margin-top: 20px;
+    }
+
+    /* Estilos para o tema claro */
+    body.light-theme {
+      background-color: #f0f0f0;
+      color: #24292E;
+      background-image: url('bg-desktop-light.jpg');
+    }
+
+    .light-icon {
+      filter: invert(1);
+    }
+
+    body.light-theme .light-icon {
+      filter: invert(0);
+    }
+
+    .light-theme .switch-label {
+      background-color: #24292E;
+    }
+
+    .light-theme .switch-label:before {
+      background-color: #f0f0f0;
+    }
+
+    .light-theme .button {
+      color: #24292E;
+      border-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .light-theme .button:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      body {
+        background-image: url('bg-mobile.jpg');
+      }
+
+      body.light-theme {
+        background-image: url('bg-mobile-light.jpg');
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <div class="avatar">
+        <img src="avatar-light.png" alt="Avatar Mayk Brito" id="avatar">
+      </div>
+
+      <div class="username">
+        @maykbrito
+      </div>
+
+      <div class="switch-container">
+        <input type="checkbox" id="switch" class="switch">
+        <label for="switch" class="switch-label">
+          <span class="switch-icon">
+            <img src="moon-stars.svg" alt="ícone switch" id="switch-icon">
+          </span>
+        </label>
+      </div>
+    </header>
+
+    <main>
+      <ul class="links">
+        <li>
+          <a href="#" class="button">Inscreva-se no NLW</a>
+        </li>
+        <li>
+          <a href="#" class="button">Baixe meu e-book</a>
+        </li>
+        <li>
+          <a href="#" class="button">Veja meu portfólio</a>
+        </li>
+        <li>
+          <a href="#" class="button">Conheça o Explorer</a>
+        </li>
+      </ul>
+    </main>
+
+    <footer>
+        <ul class="social-links">
+            <li>
+                <a href="#">
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="Ícone do Github" class="light-icon"> 
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="Ícone do Instagram" class="light-icon">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="Ícone do YouTube"> 
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="Ícone do LinkedIn">
+                </a>
+            </li>
+        </ul>
+
+      <div class="copyright">
+        Feito com ♥ pela Rocketseat
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    const body = document.body;
+    const switchInput = document.getElementById('switch');
+    const avatar = document.getElementById('avatar');
+    const switchIcon = document.getElementById('switch-icon');
+
+    switchInput.addEventListener('change', () => {
+      if (switchInput.checked) {
+        // Ativar tema claro
+        body.classList.add('light-theme');
+        avatar.src = 'avatar-light.png';
+        switchIcon.src = 'sun.svg';
+      } else {
+        // Ativar tema escuro
+        body.classList.remove('light-theme');
+        avatar.src = 'avatar.png';
+        switchIcon.src = 'moon-stars.svg';
+      }
+    });
+  </script>
+
+</body>
+</html>
